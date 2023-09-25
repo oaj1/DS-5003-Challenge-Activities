@@ -1,0 +1,16 @@
+#This dataset contains information on credit card customers, such as the customer's average credit limit, number of credit cards, number of physical visits to the bank, and number of visits to the bank's website.
+
+#Use a pandas method to create a frequency table for Total_visits_bank.
+#Assign the table to freqTable.
+
+# Import packages and functions
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('credit_card.csv')
+
+# Create a frequency table for Total_visits_bank
+freqTable = df.groupby(by=['Total_visits_bank']).size()
+
+# Display frequency table
+print(freqTable)
