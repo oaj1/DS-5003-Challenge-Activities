@@ -1,0 +1,19 @@
+#This dataset contains information on credit card customers, such as the customer's average credit limit, number of credit cards, number of physical visits to the bank, and number of visits to the bank's website.
+
+#Use a pandas method to calculate a contingency table with Total_calls_made on the rows, Total_visits_online on the columns, and Customer Key as the values.
+#Assign the table to contingencyTable.
+
+# Import packages and functions
+import pandas as pd
+import numpy as np
+
+# Load the dataset
+df = pd.read_csv('credit_card.csv')
+
+# Create a contingency table for Total_calls_made and Total_visits_online
+contingencyTable = df.pivot_table(
+     values='Customer Key',index='Total_calls_made', columns='Total_visits_online', aggfunc=np.size
+)
+
+# Display contingency table
+print(contingencyTable)
